@@ -3,8 +3,13 @@
 
 def main():
     import math
-    print("This program finds the prime factorization of a number.")
-    numb = int(input("Enter a number: "))
+    import sys
+
+    if (len(sys.argv) > 1):
+        numb = int(sys.argv[1])
+    else:
+        print("This program finds the prime factorization of a number.")
+        numb = int(input("Enter a number: "))
 
     top_numb = int(math.sqrt(numb))
     # Only has to check up to the square root of a number for primes.
@@ -33,7 +38,7 @@ def main():
         if (is_first_answer):
             answer = str(numb) + " is prime"
         else:
-            answer = answer + " * " + str(numb)
+            answer = answer + " * " + str(int(numb))
 
     print(answer)
 
